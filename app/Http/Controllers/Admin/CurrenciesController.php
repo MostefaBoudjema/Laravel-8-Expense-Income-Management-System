@@ -23,13 +23,13 @@ class CurrenciesController extends Controller
         if (! Gate::allows('currency_access')) {
             return abort(401);
         }
-        if ($filterBy = Input::get('filter')) {
-            if ($filterBy == 'all') {
-                Session::put('Currency.filter', 'all');
-            } elseif ($filterBy == 'my') {
-                Session::put('Currency.filter', 'my');
-            }
-        }
+        // if ($filterBy = Input::get('filter')) {
+        //     if ($filterBy == 'all') {
+        //         Session::put('Currency.filter', 'all');
+        //     } elseif ($filterBy == 'my') {
+        //         Session::put('Currency.filter', 'my');
+        //     }
+        // }
 
         if (request('show_deleted') == 1) {
             if (! Gate::allows('currency_delete')) {

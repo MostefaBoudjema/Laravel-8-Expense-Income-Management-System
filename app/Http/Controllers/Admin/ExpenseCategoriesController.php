@@ -24,13 +24,13 @@ class ExpenseCategoriesController extends Controller
         if (! Gate::allows('expense_category_access')) {
             return abort(401);
         }
-        if ($filterBy = Input::get('filter')) {
-            if ($filterBy == 'all') {
-                Session::put('ExpenseCategory.filter', 'all');
-            } elseif ($filterBy == 'my') {
-                Session::put('ExpenseCategory.filter', 'my');
-            }
-        }
+        // if ($filterBy = Input::get('filter')) {
+        //     if ($filterBy == 'all') {
+        //         Session::put('ExpenseCategory.filter', 'all');
+        //     } elseif ($filterBy == 'my') {
+        //         Session::put('ExpenseCategory.filter', 'my');
+        //     }
+        // }
 
                 $expense_categories = ExpenseCategory::all();
 
